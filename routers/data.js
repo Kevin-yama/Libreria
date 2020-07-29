@@ -30,6 +30,7 @@ router.get('/inicio/r',Controller.recom);
 router.get('/inicio/l',Controller.libros);
 router.get('/inicio/l/reg',Controller.reg_libros);
 router.post('/inicio/l/reg/add',Controller.add_libros);
+router.post('/prestar',Controller.prestar);
 
 
 

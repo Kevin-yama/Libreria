@@ -17,6 +17,7 @@
                   <a href="#"><img src="/images/demo/lib.jpg" alt=""></a>
                   <h2> <%= data[i].titulo %> </h2>
                   <h3> Disponible : <%= data[i].disponible %> </h3>
+<<<<<<< HEAD
                   <p> <%= data[i].descricion %></p>                          
                   <form>
                     <input value="<%= data[i].id %>" style="display: none;">
@@ -24,6 +25,14 @@
                   </form>                                                                                                                                         
                 </div>
 
+=======
+                  <p> <%= data[i].descricion %></p> 
+                  <form method="POST" action="/prestar">
+                    <input value="<%= data[i].id %>" name = 'id' style="display: none;">
+                    <button> pedir</button>                                     
+                  </form>                                                                                                                                                                  
+                </div>
+>>>>>>> b2daef7bc4e99c8f85c4118542fcb7e596215b8b
             <%} %>
 
           <%} %>
