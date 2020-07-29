@@ -1,0 +1,114 @@
+<%- include ('partes/cabecera') %>
+
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row3">
+    <main class="hoc container clear"> 
+      <!-- main body -->
+      <!-- ################################################################################################ -->
+      <div class="content"> 
+        <!-- ################################################################################################ -->
+        <h2>Libros de amor</h2>
+        <!-- ################################################################################################ -->
+        <div class="group btmspace-50 demo" style="display: flex;">
+          <% if(data){ %>
+            <% for (var i=0; i < data.length; i++){ %>
+              <% if(data[i].genero == 'amor'){ %>
+
+                  <div class="caja" >
+                    <a href="#"><img src="/images/demo/amor.jpg" alt=""></a>
+                    <h2> <%= data[i].titulo %> </h2>
+                    <h3> Disponible : <%= data[i].disponible %> </h3>
+                    <p> <%= data[i].descricion %></p>
+                    <form method="POST">
+                      <input value="<%= data[i]. %>">
+                      <button> pedir</button>                                     
+                    </form>
+                    
+                                                                                              
+                  </div>
+              <%} %>
+
+            <%} %>
+          <% } %>          
+
+                
+        
+          
+        </div>
+        <!-- ################################################################################################ -->
+        <h2>Libros de ciencia</h2>
+        <!-- ################################################################################################ -->
+        <div class="group btmspace-50 demo" style="display: flex;">
+          <% if(data){ %>
+            <% for (var i=0; i < data.length; i++){ %>
+              <% if(data[i].genero == 'ciencia'){ %>
+
+                  <div class="caja" >
+                    <a href="#"><img src="/images/demo/ciencia.jpg" alt=""></a>
+                    <h2> <%= data[i].titulo %> </h2>
+                    <h3> Disponible : <%= data[i].disponible %> </h3>
+                    <p> <%= data[i].descricion %></p>
+                    <button> pedir</button>                                     
+                                                                                              
+                  </div>
+              <%} %>
+
+            <%} %>
+          <% } %>          
+      </div>
+        <!-- ################################################################################################ -->
+        <h2>Libros de politica</h2>
+        <!-- ################################################################################################ -->
+        <div class="group btmspace-50 demo" style="display: flex;">
+          <% if(data){ %>
+            <% for (var i=0; i < data.length; i++){ %>
+              <% if(data[i].genero == 'politica'){ %>
+
+                  <div class="caja" >
+                    <a href="#"><img src="/images/demo/politica.jpg" alt=""></a>
+                    <h2> <%= data[i].titulo %> </h2>
+                    <h3> Disponible : <%= data[i].disponible %> </h3>
+                    <p> <%= data[i].descricion %></p>
+                    <button> pedir</button>                                     
+                                                                                              
+                  </div>
+              <%} %>
+
+            <%} %>
+          <% } %>          
+
+        
+        </div>
+        <!-- ################################################################################################ -->
+        <!-- ################################################################################################ -->
+        <h2>Libros juveniles</h2>
+        <!-- ################################################################################################ -->
+        <div class="group btmspace-50 demo" style="display: flex;">
+          <% if(data){ %>
+            <% for (var i=0; i < data.length; i++){ %>
+              <% if(data[i].genero == 'juvenil'){ %>
+
+                  <div class="caja" >
+                    <a href="#"><img src="/images/demo/lib.jpg" alt=""></a>
+                    <h2> <%= data[i].titulo %> </h2>
+                    <h3> Disponible : <%= data[i].disponible %> </h3>
+                    <p> <%= data[i].descricion %></p>
+                    <button> pedir</button>                                     
+                                                                                              
+                  </div>
+              <%} %>
+
+            <%} %>
+          <% } %>          
+
+        <!-- ################################################################################################ -->
+      </div>
+      <!-- ################################################################################################ -->
+      <!-- / main body -->
+      <div class="clear"></div>
+    </main>
+  </div>
+
+<%- include ('partes/footer') %>

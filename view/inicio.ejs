@@ -1,0 +1,135 @@
+<%- include ('partes/cabecera') %>
+
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/img4.jpg');">
+    <div id="pageintro" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <article class="introtxt">
+        <h2 class="heading">Bienvenido</h2>
+        <p>Puedes intercambiar libros que ya hayas leido y disfrutar de la lectura </p>
+        <footer>
+          <ul class="nospace inline pushright">
+            <li><a class="btn" href="/inicio/l/reg">Añadir libro</a></li>
+            <li><a class="btn inverse" href="/inicio/l">Ver Libros</a></li>
+          </ul>
+        </footer>
+      </article>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- recomendados  -->
+  <div class="wrapper row4">
+    <div class="hoc container clear"> 
+      <h1> Recomendados </h1>
+      <!-- ################################################################################################ -->
+      <ul class="nospace elements">
+        <% if(data){ %>
+          <% for (var i=0; i <= 2; i++){ %>
+            <% if(data[i].disponible == 'si' && data[i].propietario != 'kevin' ){ %>
+              <li class="one_third">
+                <article>
+                  <figure><img src="images/demo/img1.jpg" alt="">
+                    <figcaption><a href="/inicio/r">Detalles &raquo;</a></figcaption>
+                  </figure>
+                  <div class="txtwrap">
+                    <h6 class="heading"><%= data[i].titulo %></h6>
+                    <p><%= data[i].descricion %>&hellip;</p>
+                  </div>
+                </article>
+              </li>                
+            <%} %>
+
+          <%} %>
+        <% } %>   
+        
+        
+      </ul>    
+      <!-- ################################################################################################ -->
+    </div>
+    <figcaption><a href="/inicio/r">Ver todos &raquo;</a></figcaption>    <div class="clear"></div>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- cadtegorias  -->
+  <div class="wrapper row3">
+    <main class="hoc container clear"> 
+      <!-- main body -->
+      <!-- ################################################################################################ -->
+      <div class="center btmspace-80">
+        <!-- <h2 class="heading font-x3"><a href="#">Categorias</a></h2> -->
+        <h3 class="heading font-x3"><a>Categorias</a> </h3> 
+      </div>
+      <div class="group center">
+        <article class="one_quarter first"><i class="icon fa fa-balance-scale"></i>
+          <h4 class="font-x1 uppercase"><a href="/inicio/c">AMOR</a></h4>
+          <!-- <p></p> -->
+        </article>
+        <article class="one_quarter"><i class="icon fa fa-bank"></i>
+          <h4 class="font-x1 uppercase"><a href="/inicio/c">POLITICA</a></h4>
+          <!-- <p>Magna nec commodo ipsum libero a risus curabitur volutpat urna ac nisi suscipit vestibulum.</p> -->
+        </article>
+        <article class="one_quarter"><i class="icon fa fa-plane"></i>
+          <h4 class="font-x1 uppercase"><a href="/inicio/c">JUVENILES</a></h4>
+          <!-- <p>Nulla eu massa ornare dictum erat vel tristique ipsum suspendisse potenti in nec finibus ante.</p> -->
+        </article>
+        <article class="one_quarter"><i class="icon fa fa-graduation-cap"></i>
+          <h4 class="font-x1 uppercase"><a href="/inicio/c">CIENCIA</a></h4>
+          <!-- <p>Vestibulum gravida magna ex in dictum purus rutrum quis morbi scelerisque tempor tortor et porta.</p> -->
+        </article>
+        <h2 class="heading font-x2"><a href="/inicio/c">Ver Mas</a></h2>
+      </div>
+      <!-- ################################################################################################ -->
+      <!-- / main body -->
+      <div class="clear"></div>
+    </main>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper row4">
+    <div class="hoc container clear" style="
+    padding-bottom: 40px;"> 
+      <h1> Tus libros </h1>
+      <!-- ################################################################################################ -->
+      <ul class="nospace elements">
+         <% if(data){ %>
+          <% for (var i=0; i <= 3; i++){ %>
+            <% if(data[i].propietario == 'kevin' ){ %>
+              <li class="one_third ">
+                <article class="center"><a href="/inicio/l"><img src="images/demo/img2.jpg" alt=""></a>
+                  <div class="txtwrap">
+                    
+                    <h6 class="heading"><%= data[i].titulo %></h6>
+                    <p><%= data[i].descricion %>&hellip;</p>
+                    <footer><a href="/inicio/l">Leer Mas&raquo;</a></footer>
+                  </div>
+                </article>
+              </li>
+                          
+            <%} %>
+
+          <%} %>
+        <% } %>   
+        
+        
+        
+      </ul>
+    
+      <!-- ################################################################################################ -->
+      
+      <div class="clear"></div>
+    </div>
+    <h2 class="heading font-x2"><a href="/inicio/l">Ver todos</a></h2>
+  </div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+
+
+<%- include ('partes/footer') %>
