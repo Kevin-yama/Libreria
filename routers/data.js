@@ -23,6 +23,7 @@ router.post('/reg/add',Controller.add_reg);
 
 // ----paginas de la libreria ----
 router.get('/inicio',Controller.inicio);
+router.post('/inicio',Controller.inicio);
 router.post('/user',Controller.val_user);
 // cabecera 
 router.get('/inicio/c',Controller.coleccion);
@@ -30,7 +31,7 @@ router.get('/inicio/r',Controller.recom);
 router.get('/inicio/l',Controller.libros);
 router.get('/inicio/l/reg',Controller.reg_libros);
 router.post('/inicio/l/reg/add',Controller.add_libros);
-router.post('/prestar',Controller.prestar);
+//router.post('/prestar',Controller.prestar);
 
 
 
