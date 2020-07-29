@@ -99,16 +99,8 @@ controller.val_user = (req,res) =>{
     //res.render('inicio', {data:''});
 };
 
-controller.inicio = (req,res) =>{    
-    req.getConnection((err, conn) =>{
-        conn.query('SELECT * FROM books', (err, cons) =>{            
-            res.render('inicio', {
-                data: cons
-            });            
-        }); 
-    });
-    
-};
+
+
 
 controller.coleccion = (req,res) =>{   
     req.getConnection((err, conn) =>{
@@ -160,6 +152,31 @@ controller.add_libros = (req,res) =>{
             });
 
         }                   
+
+                
+    });
+                     
+    
+};
+controller.prestar = (req,res) =>{    
+    req.getConnection((err, conn) =>{        
+                var sqlinsert ="UPDATE books set disponible = 'no'  WHERE   id = ?";
+                conn.query(sqlinsert,req.body.id, function (err, result) {
+                if (err) {                        
+                    console.log("ERROR");
+                    console.log(err);
+                    return;
+                }                        
+                                    
+                    if (result){
+                        console.log('insercion exitosa');
+                        res.redirect('/inicio/');
+                    }else{                                                       
+                        console.log('No se hizo la inserccion');
+                        res.redirect('/inicio/');                             
+                    }                        
+            });
+                      
 
                 
     });

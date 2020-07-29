@@ -1,0 +1,43 @@
+
+<%- include ('partes/cabecera') %>
+
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <header class="heading"> Todos los libros disponibles  </header><br>
+      <div id="gallery" style="display: inline-flex;">
+        <% if(data){ %>
+          <% for (var i=0; i < data.length; i++){ %>
+            <% if(data[i].disponible == 'si'){ %>
+
+                <div class="caja" >
+                  <a href="#"><img src="/images/demo/lib.jpg" alt=""></a>
+                  <h2> <%= data[i].titulo %> </h2>
+                  <h3> Disponible : <%= data[i].disponible %> </h3>
+                  <p> <%= data[i].descricion %></p> 
+                  <form method="POST" action="/prestar">
+                    <input value="<%= data[i].id %>" name = 'id' style="display: none;">
+                    <button> pedir</button>                                     
+                  </form>                                                                                                                                                                  
+                </div>
+            <%} %>
+
+          <%} %>
+        <% } %>          
+        
+      </div>
+      
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+<%- include ('partes/footer') %>
