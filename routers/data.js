@@ -27,7 +27,9 @@ router.post('/inicio',Controller.inicio);
 router.post('/user',Controller.val_user);
 // cabecera 
 router.get('/inicio/c',Controller.coleccion);
+router.post('/inicio/c',Controller.reservar);
 router.get('/inicio/r',Controller.recom);
+router.post('/inicio/r',Controller.recom_reservar);
 router.get('/inicio/l',Controller.libros);
 router.get('/inicio/l/reg',Controller.reg_libros);
 router.post('/inicio/l/reg/add',Controller.add_libros);

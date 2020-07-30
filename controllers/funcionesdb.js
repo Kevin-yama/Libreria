@@ -109,6 +109,36 @@ controller.inicio = (req,res) =>{
     });
     
 };
+controller.reservar = (req,res) =>{    
+    req.getConnection((err, conn) =>{
+        conn.query("UPDATE  books set disponible = 'no' where id=?",req.body.id, (err, cons) =>{            
+            if(conn){
+                console.log('Reservado');
+                res.redirect('/inicio/c');
+            }else{
+                console.log('no reservado');
+            }
+
+                     
+        }); 
+    });
+    
+};
+controller.recom_reservar = (req,res) =>{    
+    req.getConnection((err, conn) =>{
+        conn.query("UPDATE  books set disponible = 'no' where id=?",req.body.id, (err, cons) =>{            
+            if(conn){
+                console.log('Reservado');
+                res.redirect('/inicio/r');
+            }else{
+                console.log('no reservado');
+            }
+
+                     
+        }); 
+    });
+    
+};
 
 controller.coleccion = (req,res) =>{   
     req.getConnection((err, conn) =>{
@@ -169,7 +199,7 @@ controller.add_libros = (req,res) =>{
 
 controller.recom = (req,res) =>{  
     req.getConnection((err, conn) =>{
-        conn.query('SELECT * FROM books', (err, cons) =>{
+        conn.query("SELECT * FROM books where disponible='si'", (err, cons) =>{
             
             res.render('recom', {
                 data: cons

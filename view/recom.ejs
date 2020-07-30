@@ -18,7 +18,10 @@
                   <h2> <%= data[i].titulo %> </h2>
                   <h3> Disponible : <%= data[i].disponible %> </h3>
                   <p> <%= data[i].descricion %></p>                          
-                  <button> Reservar</button>                                                       
+                  <form method='POST'>
+                    <input  value="<%= data[i].id %>" name ='id' style="display: none;">
+                    <button> Reservar</button>                                     
+                  </form>                                                       
                 </div>
 
             <%} %>
